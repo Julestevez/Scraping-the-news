@@ -35,12 +35,6 @@ def main(rss_url, phrases, output_csv_path, rss_limit=None):
 
 
 if __name__ == '__main__':
-    rss_url = 'https://www.infolibre.es/index.php/mod.portadas/mem.rss'
-    phrases = ['PP', 'popular', 'Génova', 'Casado','Egea', 
-    'psoe', 'socialista', 'Sánchez', 'presidente en funciones', 'Ferraz','Ávalos','Calvo',
-    'Ciudadanos', 'Cs', 'Rivera','Arrimadas','naranja',
-    'Vox', 'Abascal','Smith','Monasterio'
-    'Podemos', 'Iglesias','Montero','morado','Echenique',
-    'Mas País', 'Carmena', 'Errejón',
-    'PNV', 'Esteban', 'partido nacionalista vasco','Urkullu']
+    rss_url = 'https://www.theguardian.com/uk/rss'
+    phrases = ['word1', 'word2', 'word3', '...']
     main(rss_url, phrases, 'output.csv', 200)
