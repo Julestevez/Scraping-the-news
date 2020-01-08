@@ -3,23 +3,11 @@ import pandas as pd
 import matplotlib.pyplot as plt
 
 # Read input file. It may be different in your text file
-file = open('julio.txt', encoding="utf8")
+file = open('Example.txt', encoding="utf8")  ###CHANGE TO YOUR FILE
 a= file.read()# Stopwords
-stopwords = set(line.strip() for line in open('stopwords.txt'))
-stopwords = stopwords.union(set(['nuestra','están','años','puede','hace','he','todos','(aplausos)', #add stopwords to the dictionary
-'tanto','esa','vamos','decir','todo','ya','todo','hoy','ni','hacer','aquí','va','sin','ese','está',
-'tenemos','desde','sí','ser','hemos','parlamentario','son','grupo','yo','gobierno','cuando','me',
-'nuestro','eso','señorías','tiene','sánchez','hay','usted','ustedes','también','si','pero','porque',
-'más','les','le','han','esta','este','la','que','de','y','a','las','una','lo','su','ha','sus','el',
-'en','los','por','señor','se','un','es','del','no','al','presidenta','con','o','como','señora',
-'para','nos','creo','sobre','dicho','estamos','diputados','investidura','partido','muy','muchas','hecho',
-'tienen','sino','qué','gracias','vez','solo','contra','haya','muchos','popular','podemos','nosotros','parte',
-'menos','mismo','quiere','durante','política','cámara','así','ahora','quieren','presidencia','candidato',
-'tener','hablar','quiero','todas','unidas','cada','dos','ejemplo','mucho','estos','entre','fue','española','año','%','uno','mi','bien','mejor',
-'sociedad','solamente','poder','oposición','esos','presidente','ir','alguna','mayoría','derechos','señores','nacional',
-'socialista','sistema','esto','incluso','últimos','(aplausos','(rumores)','fuerzas','millones',
-'nada','meses','después','sido','lugar','políticas','día','algo','antes','decía','van','cosas','sea','tan']))# Instantiate a dictionary, and for every word in the file, 
-# Add to the dictionary if it doesn't exist. If it does, increase the count.
+stopwords = set(line.strip() for line in open('stopwords.txt')) ## ADD YOUR OWN STOPWORDS
+stopwords = stopwords.union(set([''word4','word5','word6']))# Instantiate a dictionary, and for every word in the file, 
+# Add to the dictionary if it doesn't exist. If it does, increase the count. ##ADD AS MANY WORDS AS NEEDED
 wordcount = {}# To eliminate duplicates, remember to split by punctuation, and use case demiliters.
 for word in a.lower().split():
     #replace the punctuation   
@@ -46,8 +34,8 @@ file.close()# Create a data frame of the most common words
 # Draw a bar chart
 lst = word_counter.most_common(n_print)
 
-df = pd.DataFrame(lst, columns = ['Término', 'Nº de veces'])
-df.plot.bar(x='Término',y='Nº de veces')
+df = pd.DataFrame(lst, columns = ['Word', 'Number of times'])
+df.plot.bar(x='Word',y='Number of times')
 df.style.set_table_attributes('style="font-size: 25px"')
 plt.xticks(fontsize=14)
 
